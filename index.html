@@ -134,6 +134,7 @@
             display: none;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             z-index: 1000;
             padding-top: 30px;
             overflow-y: auto;
@@ -169,6 +170,7 @@
             opacity: 1;
         }
 
+        /* --- QUOTE BOX: CENTERED CONTENT --- */
         .quote-box {
             background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(12px);
@@ -182,6 +184,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center text lines */
             margin-bottom: 20px;
         }
 
@@ -198,6 +202,7 @@
             font-weight: 500; 
             line-height: 1.6; 
             white-space: pre-line;
+            width: 100%;
         }
 
         .poem-font { 
@@ -206,29 +211,31 @@
             color: var(--primary); 
             display: block; 
             margin: 12px 0;
+            width: 100%;
         }
 
-        /* --- Envelopes --- */
-        .envelope-container { display: flex; gap: 25px; margin-top: 5px; padding-bottom: 30px; }
+        /* --- ENVELOPES: RESTORED ICONS --- */
+        .envelope-container { display: flex; gap: 25px; margin-top: 10px; padding-bottom: 30px; }
         
         .envelope { 
             width: 75px; 
             height: 55px; 
-            background: linear-gradient(135deg, #fff, #fdeff2);
+            background: white;
             border-radius: 12px; 
             cursor: pointer; 
             box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
-            transition: all 0.3s; 
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            font-family: 'Dancing Script', cursive;
-            font-size: 28px;
-            color: var(--primary);
+            font-size: 32px; /* Large emoji size */
             border: 1px solid rgba(255, 77, 109, 0.2);
         }
         
-        .envelope:hover { transform: translateY(-8px) scale(1.1); }
+        .envelope:hover { 
+            transform: translateY(-8px) scale(1.1); 
+            box-shadow: 0 12px 25px rgba(255, 77, 109, 0.3);
+        }
 
         /* --- Pop-up Modal --- */
         #modalOverlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: none; z-index: 1999; }
@@ -247,7 +254,6 @@
         }
         #memoryModal.active { transform: translate(-50%, -50%) scale(1); }
 
-        /* Match the quote heading style */
         #memoryTitle {
             font-family: 'Dancing Script', cursive;
             color: var(--accent);
@@ -258,9 +264,9 @@
         #memoryText { color: #444; font-size: 16px; line-height: 1.5; margin-top: 10px; }
 
         /* --- Particles --- */
-        .petal { position: fixed; top: -10px; pointer-events: none; animation: fall linear forwards; }
+        .petal { position: fixed; top: -10px; pointer-events: none; animation: fall linear forwards; z-index: 1005; }
         @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
-        .particle { position: fixed; pointer-events: none; animation: pop 1.5s ease-out forwards; }
+        .particle { position: fixed; pointer-events: none; animation: pop 1.5s ease-out forwards; z-index: 1100; }
         @keyframes pop { to { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; } }
     </style>
 </head>
@@ -298,9 +304,9 @@
             <p id="typewriter" class="love-note"></p>
         </div>
         <div class="envelope-container">
-            <div class="envelope" onclick="openMemory(0)">Love</div>
-            <div class="envelope" onclick="openMemory(1)">Soul</div>
-            <div class="envelope" onclick="openMemory(2)">Mine</div>
+            <div class="envelope" onclick="openMemory(0)">📩</div>
+            <div class="envelope" onclick="openMemory(1)">📩</div>
+            <div class="envelope" onclick="openMemory(2)">📩</div>
         </div>
     </div>
 
