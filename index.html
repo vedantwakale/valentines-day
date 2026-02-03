@@ -185,35 +185,31 @@
 .quote-box {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    padding: 30px 20px; 
+    padding: 20px; /* Tighter padding */
     border-radius: 30px;
-    width: 95%;
-    max-width: 380px;
-    /* FIX 1: Set a consistent height so the box doesn't grow/shrink */
-    min-height: 350px; 
+    width: 90%;
+    max-width: 340px;
+    min-height: 200px; /* Reduced height to save space */
     height: auto;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 5;
-    margin-top: -10px;
+    margin-top: -5px;
     display: flex;
     flex-direction: column;
-    /* FIX 2: Align to the top (flex-start) instead of center */
-    justify-content: flex-start; 
+    justify-content: center;
     align-items: center;
 }
-
 .love-note { 
     color: #333; 
-    font-size: 16px; 
+    font-size: 14px; /* Slightly smaller font */
     font-weight: 500; 
-    line-height: 1.6; 
+    line-height: 1.4; 
     text-align: center;
-    /* FIX 3: Ensure a minimum height for the text area so it doesn't jump */
-    min-height: 200px; 
+    min-height: 140px; /* Fixed height for text area */
     white-space: pre-line; 
 }
-
+        
 .envelope-container {
     display: flex;
     gap: 20px;
@@ -266,18 +262,18 @@
         #memoryModal p { color: #555; font-size: 14px; line-height: 1.5; }
         #modalOverlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: none; z-index: 1999; }
 
-        .wreath-frame {
-            position: relative;
-            width: 260px;
-            height: 260px;
-            margin-bottom: 25px;
-            padding: 12px;
-            background: var(--brown);
-            border-radius: 50%;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            animation: ringSpin 15s linear infinite;
-            cursor: pointer;
-        }
+       .wreath-frame {
+    position: relative;
+    width: 180px; /* Reduced from 260px */
+    height: 180px; /* Reduced from 260px */
+    margin-bottom: 15px; /* Reduced margin */
+    padding: 8px;
+    background: var(--brown);
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    animation: ringSpin 15s linear infinite;
+    cursor: pointer;
+}}
 
         @keyframes ringSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
@@ -305,14 +301,18 @@
 
 .poem-font {
     font-family: 'Dancing Script', cursive;
-    font-size: 22px; /* Adjusted size for better proportions */
+    font-size: 18px; /* Smaller poem font */
     color: var(--primary);
     display: block;
-    margin: 10px 0;
-    line-height: 1.4;
+    margin: 5px 0;
 }
 
-        .quote-text { font-family: 'Dancing Script', cursive; font-size: 34px; color: var(--accent); margin-bottom: 15px; }
+       .quote-text { 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 24px; /* Reduced from 34px */
+    color: var(--accent); 
+    margin-bottom: 5px; 
+}
         
         .love-note { 
             color: #333; 
@@ -512,6 +512,7 @@ function onPlead() {
 </body>
 
 </html>
+
 
 
 
