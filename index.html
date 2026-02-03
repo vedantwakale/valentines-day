@@ -183,17 +183,35 @@
 }
 
 .quote-box {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    padding: 30px 20px 40px 20px; /* Extra bottom padding */
+    padding: 30px 20px; 
     border-radius: 30px;
-    width: 90%;
-    max-width: 360px;
-    height: auto; /* Let the box grow with the text */
-    min-height: 280px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    margin-bottom: 30px; /* Added margin to push envelopes away */
+    width: 95%;
+    max-width: 380px;
+    /* FIX 1: Set a consistent height so the box doesn't grow/shrink */
+    min-height: 350px; 
+    height: auto;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    /* FIX 2: Align to the top (flex-start) instead of center */
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.love-note { 
+    color: #333; 
+    font-size: 16px; 
+    font-weight: 500; 
+    line-height: 1.6; 
+    text-align: center;
+    /* FIX 3: Ensure a minimum height for the text area so it doesn't jump */
+    min-height: 200px; 
+    white-space: pre-line; 
 }
 
 .envelope-container {
@@ -283,16 +301,7 @@
             transition: opacity 0.3s ease-in-out; 
         }
 
-        /* Added shimmer-container class here *
-
-.love-note { 
-    color: #444; 
-    font-size: 15px; /* Slightly smaller to ensure it fits mobile screens */
-    font-weight: 500; 
-    line-height: 1.5; /* Balanced spacing between lines */
-    text-align: center;
-    white-space: pre-line; 
-}
+        
 
 .poem-font {
     font-family: 'Dancing Script', cursive;
@@ -503,6 +512,7 @@ function onPlead() {
 </body>
 
 </html>
+
 
 
 
