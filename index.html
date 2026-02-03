@@ -261,22 +261,24 @@
         }
 
         /* Added shimmer-container class here */
-        .quote-box {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 40px 30px;
-            border-radius: 30px;
-            width: 95%;
-            max-width: 380px;
-            min-height: 240px;
-            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            z-index: 5;
-            margin-top: -10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+       .quote-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 30px 25px; /* Reduced padding slightly to save space */
+    border-radius: 30px;
+    width: 95%;
+    max-width: 380px;
+    height: auto; /* Change this from min-height to auto */
+    min-height: 300px; /* Give it enough room for the longer poem */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible; /* Ensures nothing is clipped */
+}
 
         .quote-text { font-family: 'Dancing Script', cursive; font-size: 34px; color: var(--accent); margin-bottom: 15px; }
         
@@ -478,3 +480,4 @@ function onPlead() {
 </body>
 
 </html>
+
