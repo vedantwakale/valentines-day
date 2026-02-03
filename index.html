@@ -261,23 +261,41 @@
         }
 
         /* Added shimmer-container class here */
-       .quote-box {
-    background: rgba(255, 255, 255, 0.85);
+    .quote-box {
+    background: rgba(255, 255, 255, 0.9); /* Slightly more solid for readability */
     backdrop-filter: blur(12px);
-    padding: 30px 25px; /* Reduced padding slightly to save space */
+    padding: 25px 20px 40px 20px; /* Added more bottom padding (40px) */
     border-radius: 30px;
-    width: 95%;
-    max-width: 380px;
-    height: auto; /* Change this from min-height to auto */
-    min-height: 300px; /* Give it enough room for the longer poem */
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 90%;
+    max-width: 360px;
+    min-height: 320px; /* Increased to fit the 4-line poem comfortably */
+    height: auto; 
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     z-index: 5;
-    margin-top: -10px;
+    margin-top: -20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: visible; /* Ensures nothing is clipped */
+    align-items: center;
+}
+
+.love-note { 
+    color: #444; 
+    font-size: 15px; /* Slightly smaller to ensure it fits mobile screens */
+    font-weight: 500; 
+    line-height: 1.5; /* Balanced spacing between lines */
+    text-align: center;
+    white-space: pre-line; 
+}
+
+.poem-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px; /* Adjusted size for better proportions */
+    color: var(--primary);
+    display: block;
+    margin: 10px 0;
+    line-height: 1.4;
 }
 
         .quote-text { font-family: 'Dancing Script', cursive; font-size: 34px; color: var(--accent); margin-bottom: 15px; }
@@ -480,4 +498,5 @@ function onPlead() {
 </body>
 
 </html>
+
 
